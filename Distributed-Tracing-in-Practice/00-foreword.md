@@ -1,4 +1,8 @@
+<div align="center">
+
 [目录](00-index.md) · [下一章：引言 →](00-introduction.md)
+
+</div>
 
 # 序（Foreword）
 
@@ -50,4 +54,8 @@ Dapper 联合创造者
 
 ---
 
+<div align="center">
+
 [目录](00-index.md) · [下一章：引言 →](00-introduction.md)
+
+</div>

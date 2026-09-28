@@ -1,4 +1,8 @@
+<div align="center">
+
 [← 引言](00-introduction.md) · [目录](00-index.md) · [下一章：第 2 章 →](02-an-ontology-of-instrumentation.md)
+
+</div>
 
 # 第 1 章　Distributed Tracing 的难题
 
@@ -93,4 +97,8 @@ Distributed tracing 具体能带来哪些收益？我们会在本书余下篇幅
 1. **章节题词**：James Mickens 是哈佛大学计算机科学教授，以犀利幽默的技术演讲与随笔著称；这句「I have no tools because I've destroyed my tools with my tools」出自其 2013 年的文章，常被引用来讽刺现代系统的复杂度。
 2. **小节标题「Distributed Tracing、微服务、无服务器，我的天哪！」**：原文 "Distributed Tracing, Microservices, Serverless, Oh My!" 化用经典电影《绿野仙踪》里 Dorothy 的台词 "Lions and Tigers and Bears, Oh My!"。
 
+<div align="center">
+
 [← 引言](00-introduction.md) · [目录](00-index.md) · [下一章：第 2 章 →](02-an-ontology-of-instrumentation.md)
+
+</div>

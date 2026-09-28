@@ -1,4 +1,8 @@
+<div align="center">
+
 [← 序](00-foreword.md) · [目录](00-index.md) · [下一章：第 1 章 →](01-the-problem-with-distributed-tracing.md)
+
+</div>
 
 # 引言：什么是 Distributed Tracing？
 
@@ -94,4 +98,8 @@ Distributed tracing 缓解分布式架构中的混乱：它确保穿过你各服
 
 1. **「微服务谋杀案」（microservices murder mystery）**：借自 Twitter（现 X）上流传的说法，把分布式系统排障比作刑侦破案。
 
+<div align="center">
+
 [← 序](00-foreword.md) · [目录](00-index.md) · [下一章：第 1 章 →](01-the-problem-with-distributed-tracing.md)
+
+</div>

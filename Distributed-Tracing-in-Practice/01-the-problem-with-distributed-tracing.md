@@ -1,6 +1,6 @@
 [← 引言](00-introduction.md) · [目录](00-index.md) · [下一章：第 2 章 →](02-an-ontology-of-instrumentation.md)
 
-# 第 1 章　Distributed Tracing 的难题（The Problem with Distributed Tracing）
+# 第 1 章　Distributed Tracing 的难题
 
 > I HAVE NO TOOLS BECAUSE I'VE DESTROYED MY TOOLS WITH MY TOOLS.
 > ——James Mickens
@@ -17,15 +17,17 @@
 
 一次 distributed tracing 部署带来的成果，是一件让你能看清 deep system、并能轻松理解单次请求中各个服务如何共同影响该请求整体性能的工具。你生成的 trace 数据，不仅能用来绘制分布式系统的整体形状（见图1-1），还能用来看清单次请求内部各个服务的性能。
 
-![图1-1：由 trace 数据生成的服务地图](images/figure-1-1.png)
-
-图1-1：由 trace 数据生成的服务地图
+<p align="center">
+  <img src="images/figure-1-1.png" alt="图1-1：由 trace 数据生成的服务地图"><br>
+  图1-1：由 trace 数据生成的服务地图
+</p>
 
 如图1-2所示，你能沿着请求从前端客户端流入后端服务的路径审视它，理解延迟或错误是如何——以及为何——发生的，以及它们对整个请求造成了什么影响。这些 trace 提供的信息极为丰富，在你排查生产环境问题时弥足珍贵，比如能标明某个服务正跑在哪台主机或哪个区域（region）的 metadata。你可以按自己的心意搜索、排序、过滤、分组，乃至任意切分这些 trace 数据，以便快速排障，或弄清不同维度如何影响你的服务性能。
 
-![图1-2：一条由前端 Web 客户端发起请求的样例 trace](images/figure-1-2.png)
-
-图1-2：一条由前端 Web 客户端发起请求的样例 trace
+<p align="center">
+  <img src="images/figure-1-2.png" alt="图1-2：一条由前端 Web 客户端发起请求的样例 trace"><br>
+  图1-2：一条由前端 Web 客户端发起请求的样例 trace
+</p>
 
 那么，要如何从这里走到那里？要成功部署 distributed tracing，你需要什么？
 
@@ -65,7 +67,7 @@ Log 呢，能提供某个服务极其细粒度的细节，却没有内建的办�
 
 ## Tracing 的收益
 
-Distributed tracing 具体能带来哪些收益？我们会在本书余下篇幅里细谈，但先来盘一盘高层的「速赢」：
+Distributed tracing 具体能带来哪些收益？我们会在本书余下篇幅里细谈，但先来盘一盘显而易见的「好处」：
 
 - Distributed tracing 能改变你开发与交付软件的方式，这点毋庸置疑。它不仅有益于软件质量，也有益于组织的健康。
 - Distributed tracing 能提升开发者生产力与开发产出。它是开发者理解生产环境分布式系统行为最好、最省力的办法。用 distributed tracing，你在排障与调试分布式系统上花的时间会比不用时更少，还会发现一些你原本根本不知道存在的问题。
@@ -88,7 +90,7 @@ Distributed tracing 具体能带来哪些收益？我们会在本书余下篇幅
 
 ### 译者注
 
-1. **章节题词**：James Mickens 是哈佛大学计算机科学教授，以犀利幽默的技术演讲与随笔著称；这句「I have no tools because I've destroyed my tools with my tools」出自其 2013 年的文章（原书脚注标 `[Mic13]`），常被引用来讽刺现代系统的复杂度。
-2. **小节标题「Distributed Tracing、微服务、无服务器，我的天哪！」**：原文 "Distributed Tracing, Microservices, Serverless, Oh My!" 化用经典电影《绿野仙踪》里 Dorothy 的台词 "Lions and Tigers and Bears, Oh My!"，此处保留「我的天哪！」的感叹口吻。
+1. **章节题词**：James Mickens 是哈佛大学计算机科学教授，以犀利幽默的技术演讲与随笔著称；这句「I have no tools because I've destroyed my tools with my tools」出自其 2013 年的文章，常被引用来讽刺现代系统的复杂度。
+2. **小节标题「Distributed Tracing、微服务、无服务器，我的天哪！」**：原文 "Distributed Tracing, Microservices, Serverless, Oh My!" 化用经典电影《绿野仙踪》里 Dorothy 的台词 "Lions and Tigers and Bears, Oh My!"。
 
 [← 引言](00-introduction.md) · [目录](00-index.md) · [下一章：第 2 章 →](02-an-ontology-of-instrumentation.md)

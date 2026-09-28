@@ -28,17 +28,19 @@ Distributed tracing（也叫 distributed request tracing）是一类关联式 lo
 
 Deep system 的问题最终是一个人的问题。要弄懂哪怕单次请求 critical path 上的那些服务、并持续维护它们，对一个人乃至一群人来说都很快变得不现实。作为服务 owner，你能控制的范围与你被隐含地要求负责的范围，见图P-1。这种盘算就是压力与倦怠的配方：你被迫对别的服务 owner 采取被动姿态，成天救火，还要琢磨自己的服务和别人的服务究竟如何互动。
 
-![图P-1：你能控制的服务，其依赖由你负责，你却没有直接控制权](images/figure-P-1.png)
-
-图P-1：你能控制的服务，其依赖由你负责，你却没有直接控制权
+<p align="center">
+  <img src="images/figure-P-1.png" alt="图P-1：你能控制的服务，其依赖由你负责，你却没有直接控制权"><br>
+  图P-1：你能控制的服务，其依赖由你负责，你却没有直接控制权
+</p>
 
 ## 理解分布式架构之难
 
 把软件分布开来，会带来新的、令人兴奋的挑战。失败与崩溃，突然间变得更难定位。你负责的服务，可能正从一个你无法控制的源头收到意料之外的数据，因为那个源头的服务由地球另一端的团队（或一个远程团队）管理着。你以为固若金汤的那些服务，一旦出问题，会突然在你所有服务里引发连锁的失败与错误。借 Twitter 的一个说法：你手上摊上了一桩「微服务谋杀案」（见图P-2）。
 
-![图P-2：它好笑，是因为它是真的](images/figure-P-2.png)
-
-图P-2：它好笑，是因为它是真的
+<p align="center">
+  <img src="images/figure-P-2.png" alt="图P-2：它好笑，是因为它是真的"><br>
+  图P-2：它好笑，是因为它是真的
+</p>
 
 把这个比喻继续下去：monitoring 能帮你确定尸体在哪儿，却无法揭示谋杀为何发生。Distributed tracing 用三大痛点的解法，补上了这些缺口，让你能轻松读懂整个系统：
 
@@ -64,15 +66,17 @@ Distributed tracing 是管理 deep system 带来的复杂度爆炸的关键工�
 
 除了 RPC 关系，再想想这些服务各自干的活。也许它们在认证和授权用户角色，在做数学计算，或只是把数据从一种格式转成另一种。这些服务通过 RPC 相互通信，发请求、收响应。不管在干什么，所有服务有一个共同点：它们干的活都耗去一段时间。服务与 RPC 的基本模式见图P-3。
 
-![图P-3：一个从 client process 发往 service process 的请求](images/figure-P-3.png)
-
-图P-3：一个从 client process 发往 service process 的请求
+<p align="center">
+  <img src="images/figure-P-3.png" alt="图P-3：一个从 client process 发往 service process 的请求"><br>
+  图P-3：一个从 client process 发往 service process 的请求
+</p>
 
 我们把每个服务所干的活称为一个 span——就是这活所需要的「时间跨度」。span 可以用 metadata（称为 attribute 或 tag）与 event（也叫 log）来标注。服务之间的 RPC，则通过关系来表示，这些关系刻画请求的性质与发生的先后次序。这种关系靠 trace context 传播——trace context 是一点数据，唯一标识一条 trace 及其中的每个 span。每个服务产生的 span 数据随后被送往某个外部进程，在那里聚合成一条 trace、分析出更多洞见、并存储起来以备进一步分析。一个简单的 trace 例子见图P-4：一条两个服务之间的 trace，以及第一个服务内部的一条 subtrace。
 
-![图P-4：一个简单的 trace](images/figure-P-4.png)
-
-图P-4：一个简单的 trace
+<p align="center">
+  <img src="images/figure-P-4.png" alt="图P-4：一个简单的 trace"><br>
+  图P-4：一个简单的 trace
+</p>
 
 Distributed tracing 缓解分布式架构中的混乱：它确保穿过你各服务的每一次逻辑请求，都被呈现为一次独立的逻辑请求。它保证与某次业务逻辑执行相关的所有数据，在被分析、被呈现的那一刻仍然耦合在一起。它用「沿特定 API 或其他路径的服务间关系来查询」的方式，解决不一致问题，让你能问出「当那个服务挂了，我的 API 会怎样？」这类问题。最后，它解决去中心化问题：提供一种机制，让各个进程能各自独立地把 trace 数据交给一个 collector，由后者稍后集中起来，从而使你能看见并理解那些跨多个数据中心、区域或其他分布运行的请求。
 

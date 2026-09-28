@@ -53,7 +53,7 @@ Distributed tracing 需要 trace。Trace 数据可以通过给你的 service pro
 
 说了这么多，仍有一个悬而未决的问题：distributed tracing 与微服务、乃至更广义的分布式架构，究竟是什么关系？我们在「引言：什么是 Distributed Tracing？」里提过一点，但这里不妨岔开一下，把这几样东西之间的关系再捋一捋。
 
-## Distributed Tracing、微服务、无服务器，我的天哪！
+## Distributed Tracing、微服务、serverless，我的天哪！
 
 关于微服务，如今它们早已过了「每个分析师都在其『20XX 年十大趋势』清单里挂一笔」的热门期，于是有一种论调冒了出来——大意是：这场仗已经打完了。云计算的爆炸式流行、Kubernetes、容器化，以及其他能快速供给与部署硬件（或类硬件抽象）的开发工具，毫无疑问改变了整个行业。这些因素会让人产生一种错觉：问出「我该用微服务吗？」这个问题，就等于自曝是个傻瓜或江湖骗子。
 
@@ -95,7 +95,7 @@ Distributed tracing 具体能带来哪些收益？我们会在本书余下篇幅
 ### 译者注
 
 1. **章节题词**：James Mickens 是哈佛大学计算机科学教授，以犀利幽默的技术演讲与随笔著称；这句「I have no tools because I've destroyed my tools with my tools」出自其 2013 年的文章，常被引用来讽刺现代系统的复杂度。
-2. **小节标题「Distributed Tracing、微服务、无服务器，我的天哪！」**：原文 "Distributed Tracing, Microservices, Serverless, Oh My!" 化用经典电影《绿野仙踪》里 Dorothy 的台词 "Lions and Tigers and Bears, Oh My!"。
+2. **小节标题「Distributed Tracing、微服务、serverless，我的天哪！」**：原文 "Distributed Tracing, Microservices, Serverless, Oh My!" 化用经典电影《绿野仙踪》里 Dorothy 的台词 "Lions and Tigers and Bears, Oh My!"。
 
 <div align="center">
 
